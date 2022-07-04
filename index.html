@@ -4,17 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <title>Pixel Art</title>
 </head>
 <body>
 
-    <header>
-        <h1 id="title">Paleta de Cores</h1>
-        <a href="https://github.com/flimamcz" target="_blank">
-            <img src="assets/icon-github.svg" alt="icone do github preto.">
+    <header class="header container">
+        <h1 id="title">Paleta de <span>Cores</span></h1>
+
+        <a class="button-header" href="https://github.com/flimamcz" target="_blank">
+            <img src="assets/icon-github.svg" alt="icone do github preto." height="24">
             <span>Github</span>
         </a>
     </header>
+
+    <hr>
 
     <section class="container-palette">
         <ul id="color-palette">
@@ -24,7 +31,11 @@
             <li class="color color-red"></li>
         </ul>
 
+        <ul id="pixel-board">
+
+        </ul>
     </section>
-    
+
+    <script src="script.js"></script>
 </body>
 </html>
