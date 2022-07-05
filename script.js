@@ -8,6 +8,18 @@ function createListPixelsBoard() {
   }
 }
 
+const getElementColor = document.querySelectorAll('.color');
+getElementColor[0].classList.add('selected');
+
+getElementColor.forEach((element) => {
+  element.addEventListener('click', (event) => {
+    getElementColor.forEach((item) => {
+      item.classList.remove('selected');
+    });
+    event.target.classList.add('selected');
+  });
+});
+
 window.onload = () => {
   createListPixelsBoard();
 };
