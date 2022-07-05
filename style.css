@@ -106,3 +106,20 @@ li {
 .color-red {
   background-color: #ff0000;
 }
+
+/* PIXEL BOARD */
+
+#pixel-board{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 200px;
+  margin: 3.2rem auto;
+}
+
+.pixel {
+  background: #ffffff;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #000;
+  cursor: pointer;
+}
