@@ -1,3 +1,5 @@
+const getElementColor = document.querySelectorAll('.color');
+
 function createListPixelsBoard() {
   const pixelsBoard = document.getElementById('pixel-board');
 
@@ -8,18 +10,42 @@ function createListPixelsBoard() {
   }
 }
 
-const getElementColor = document.querySelectorAll('.color');
-getElementColor[0].classList.add('selected');
-
-getElementColor.forEach((element) => {
-  element.addEventListener('click', (event) => {
-    getElementColor.forEach((item) => {
-      item.classList.remove('selected');
+function backgroundAplly(rgb) {
+  const pixel = document.querySelectorAll('.pixel');
+  pixel.forEach((item) => {
+    item.addEventListener('click', (event) => {
+      event.currentTarget.style.backgroundColor = rgb
     });
-    event.target.classList.add('selected');
   });
-});
+}
+
+function getBackgroundColor() {
+  getElementColor.forEach((element) => {
+    element.addEventListener('click', () => {
+      const item = element;
+      const cssObjStyle = window.getComputedStyle(item, null);
+      const backgroundColor = cssObjStyle.getPropertyValue('background-color');
+      backgroundAplly(backgroundColor);
+    });
+  });
+}
+
+function selectColorPallete() {
+  getElementColor[0].classList.add('selected');
+
+  getElementColor.forEach((element) => {
+    element.addEventListener('click', (event) => {
+      getElementColor.forEach((item) => {
+        item.classList.remove('selected');
+      });
+      event.target.classList.add('selected');
+    });
+  });
+}
 
 window.onload = () => {
   createListPixelsBoard();
+  selectColorPallete();
+  getBackgroundColor();
+  backgroundAplly('rgb(0, 0, 0)');
 };
