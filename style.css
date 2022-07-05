@@ -45,6 +45,11 @@ li {
   color: #292828;
 }
 
+.button-header span {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
 .header #title span {
   color: #f1cb00;
 }
@@ -59,18 +64,12 @@ li {
   border-radius: 0.3rem;
 }
 
-.header .button-header span {
-  font-size: 1.6rem;
-  font-weight: 700;
-}
-
 .header .button-header:hover {
   transform: scale(1.02);
   transition: 0.3s;
 }
 
 /* Container Palette */
-
 #color-palette {
   display: flex;
   flex-direction: row;
@@ -82,34 +81,33 @@ li {
 .color {
   width: 4rem;
   height: 4rem;
-  border: 1px solid #000000;
+  border: 1px solid black;
   cursor: pointer;
 }
 
 .color:hover {
   transform: scale(1.04);
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .color-black {
-  background-color: #000000;
+  background-color: black;
 }
 
 .color-yellow {
-  background-color: #F1CB00;
+  background-color: #f1cb00;
 }
 
 .color-blue {
-  background-color: #543AF1;
+  background-color: #543af1;
 }
 
 .color-red {
-  background-color: #ff0000;
+  background-color: red;
 }
 
 /* PIXEL BOARD */
-
-#pixel-board{
+#pixel-board {
   display: flex;
   flex-wrap: wrap;
   max-width: 200px;
@@ -117,16 +115,15 @@ li {
 }
 
 .pixel {
-  background: #ffffff;
+  background: white;
   width: 40px;
   height: 40px;
-  border: 1px solid #000;
+  border: 1px solid black;
   cursor: pointer;
 }
 
 /* BTN CLEAN */
-
-.btn-clean{
+.btn-clean {
   font-size: 1.6rem;
   font-weight: 700;
   text-align: center;
