@@ -136,20 +136,19 @@ li {
   cursor: pointer;
 }
 
-/* FORM input*/
-
-.container-button-form{
+/* FORM input */
+.container-button-form {
   max-width: 250px;
   margin: 0 auto;
   gap: 10px;
 }
 
-#form{
+#form {
   display: flex;
   justify-content: center;
 }
 
-#form input{
+#form input {
   font-family: Poppins, sans-serif;
   font-size: 1.2rem;
   width: 70%;
@@ -159,7 +158,7 @@ li {
   border-top-left-radius: 2px;
 }
 
-#form button{
+#form button {
   font-family: Poppins, sans-serif;
   font-weight: 700;
   width: 30%;
@@ -170,9 +169,8 @@ li {
   cursor: pointer;
 }
 
-#form button:hover{
+#form button:hover {
   background-color: #bea71f;
   transition: 0.3s;
   color: #e9dfdf;
 }
-
