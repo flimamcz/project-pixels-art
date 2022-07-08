@@ -6,13 +6,11 @@ const pixelBoard = document.getElementById('pixel-board');
 
 // Cria a lista de pixel
 function createListPixelsBoard(numberPixel = 5) {
-  const pixelsBoard = document.getElementById('pixel-board');
   pixelBoard.style.maxWidth = `${numberPixel * 40}px`;
-
   for (let index = 0; index < numberPixel ** 2; index += 1) {
     const li = document.createElement('li');
     li.classList.add('pixel');
-    pixelsBoard.appendChild(li);
+    pixelBoard.appendChild(li);
   }
 }
 
@@ -61,13 +59,12 @@ function clearBoard() {
 }
 
 function createNewTable(qntPixel) {
-  const pixelsBoard = document.getElementById('pixel-board');
   pixelBoard.style.maxWidth = `${qntPixel * 40}px`;
 
   for (let index = 0; index < qntPixel ** 2; index += 1) {
     const li = document.createElement('li');
     li.classList.add('pixel');
-    pixelsBoard.appendChild(li);
+    pixelBoard.appendChild(li);
   }
 }
 
