@@ -3,6 +3,23 @@ const buttonClear = document.getElementById('clear-board');
 const valueInput = document.getElementById('board-size');
 const buttonSubmit = document.getElementById('generate-board');
 const pixelBoard = document.getElementById('pixel-board');
+const colorsRandomElements = document.querySelectorAll('.color-random');
+
+function generateColors() {
+  const arrayColors = [];
+
+  for (let index = 0; index < 3; index += 1) {
+    arrayColors.push(`rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`);
+  }
+
+  colorsRandomElements.forEach((element, index) => {
+    element.style.backgroundColor = arrayColors[index]
+  });
+
+  return arrayColors;
+}
+
+generateColors();
 
 // Cria a lista de pixel
 function createListPixelsBoard(numberPixel = 5) {
