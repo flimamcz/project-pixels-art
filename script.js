@@ -5,6 +5,7 @@ const buttonSubmit = document.getElementById('generate-board');
 const pixelBoard = document.getElementById('pixel-board');
 const colorsRandomElements = document.querySelectorAll('.color-random');
 
+// Gera as cores aleatorias e aplica
 function generateColors() {
   const arrayColors = [];
 
@@ -12,14 +13,10 @@ function generateColors() {
     arrayColors.push(`rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`);
   }
 
-  colorsRandomElements.forEach((element, index) => {
-    element.style.backgroundColor = arrayColors[index]
-  });
-
-  return arrayColors;
+  for (let index = 0; index < arrayColors.length; index += 1) {
+    colorsRandomElements[index].style.backgroundColor = arrayColors[index];
+  }
 }
-
-generateColors();
 
 // Cria a lista de pixel
 function createListPixelsBoard(numberPixel = 5) {
@@ -71,14 +68,21 @@ function clearBoard() {
   const pixel = document.querySelectorAll('.pixel');
   pixel.forEach((element) => {
     const item = element;
-    item.style.backgroundColor = 'rgba(255, 255, 255)';
+    item.style.backgroundColor = 'rgb(255, 255, 255)';
   });
 }
 
 function createNewTable(qntPixel) {
-  pixelBoard.style.maxWidth = `${qntPixel * 40}px`;
+  let sizeBoardSize = qntPixel;
+  if (sizeBoardSize < 5) {
+    sizeBoardSize = 5;
+  } else if (sizeBoardSize > 50) {
+    sizeBoardSize = 50;
+  } else {
+    pixelBoard.style.maxWidth = `${sizeBoardSize * 40}px`;
+  }
 
-  for (let index = 0; index < qntPixel ** 2; index += 1) {
+  for (let index = 0; index < sizeBoardSize ** 2; index += 1) {
     const li = document.createElement('li');
     li.classList.add('pixel');
     pixelBoard.appendChild(li);
@@ -95,7 +99,7 @@ function clearOldTable() {
 function handleSubmit(event) {
   event.preventDefault();
   const isNumberInput = Number(valueInput.value);
-  if (isNumberInput <= 0 || isNumberInput > 50 || valueInput.value === '') {
+  if (isNumberInput <= 0 || valueInput.value === '') {
     alert('Board inválido!');
     valueInput.value = '';
   } else {
@@ -117,4 +121,5 @@ window.onload = () => {
   addClassSelect();
   getBackgroundColor();
   backgroundAplly('rgb(0, 0, 0)');
+  generateColors();
 };
